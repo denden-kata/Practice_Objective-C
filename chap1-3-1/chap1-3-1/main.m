@@ -1,5 +1,9 @@
 #import <Foundation/Foundation.h>
 
+// 関数のプロトタイプ宣言
+double Sum_triangle(double x, double y);
+double num_x=5, num_y=3;
+
 // 関数もCと同じ通りに書いて問題なし
 void Expression(bool compare){
     // Bool型の注意 Objective-C ではYES or NOを使う
@@ -26,7 +30,12 @@ int main(int argc, const char * argv[]) {
         // Expression : 評価式の意味
         Expression(compare_bool);
         
+        NSLog(@"底辺5,高さ3の三角形の面積 = %lf", Sum_triangle(num_x, num_y));
+        
     }
     return 0;
 }
 
+double Sum_triangle(double x, double y){
+    return x * y / 2;
+}
