@@ -31,14 +31,16 @@ int main(int argc, const char * argv[]) {
         } Person;
         
         // 構造体Person型を使用する
-        Person human_a;
+        Person human_a = {142, 34, 2012, 3, 28};
         
-        // 構造体内のメンバ変数に値を格納する
-        human_a.height = 170;
+        // 構造体内のメンバ変数を指定して値を格納する場合
+        // human_a.height = 142;
         
-        
-        
-        
+        NSLog(@"aの身長 %f cm", human_a.height);
+        NSLog(@"aの体重 %f kg", human_a.weight);
+        NSLog(@"aの生年月日 %d年%d月%d日", human_a.birth_year,
+                                        human_a.birth_month,
+                                        human_a.birth_day );
     }
     return 0;
 }
