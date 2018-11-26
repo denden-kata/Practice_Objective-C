@@ -38,9 +38,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"aの身長 %f cm", human_a.height);
         NSLog(@"aの体重 %f kg", human_a.weight);
-        NSLog(@"aの生年月日 %d年%d月%d日", human_a.birth_year,
-                                        human_a.birth_month,
-                                        human_a.birth_day );
+        NSLog(@"aの生年月日 %d年%d月%d日", human_a.birth_year, human_a.birth_month, human_a.birth_day );
     }
     return 0;
 }
