@@ -15,7 +15,7 @@ struct Person_sample{
 // "struct Person_sample" → "Person_sample" 短くなりました
 typedef struct Person_sample Person_sample;
 
-// 上記の２つの処理を１つにまとめたもの
+// 上記の２つの処理を１つにまとめたもの。構造体を宣言した後に名前を変更
 typedef struct birthdate{
     int year;
     int month;
