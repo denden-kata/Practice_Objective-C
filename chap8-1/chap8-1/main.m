@@ -1,8 +1,9 @@
 // 構造体の練習
 #import <Foundation/Foundation.h>
 
-// "struct Person" が "構造体の型名"
-// "struct" は必須
+// 構造体の型名は "struct" から始まる
+// "struct Person" が型名
+
 struct Person_sample{
     float height;
     float weight;
