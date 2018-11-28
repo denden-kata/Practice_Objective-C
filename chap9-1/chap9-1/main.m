@@ -35,7 +35,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // インスタンスを生成。宣言時は "*" をつける
-        // alloc : 実態を生成, init : 値の初期化
+        // alloc : 実態を生成（メモリを確保）, init : 値の初期化
         Triangle *triangle_a = [[Triangle alloc] init];
         
         // インスタンス変数に値を格納。アロー演算子を用いる
