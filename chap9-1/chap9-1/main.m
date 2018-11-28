@@ -19,10 +19,10 @@
     float sum_triangle = (float) width * (float) height / 2;
     return sum_triangle;
 }
-// 底辺を高さを２倍にするメソッド
-- (void) SizeDouble {
-    width *= 2;
-    height *= 2;
+// 底辺と高さを？倍にする。仮引数を ":" 以降に記載
+- (void) SizeChange : (int) width_ratio : (int) height_ratio {
+    width *= width_ratio;
+    height *= height_ratio;
     return;
 }
 @end
@@ -46,8 +46,8 @@ int main(int argc, const char * argv[]) {
         // ”triangle_a インスタンス” に対して "SumTriangle メソッド" を実行
         NSLog(@"sum_triangle = %lf", [triangle_a SumTriangle]);
         
-        [triangle_a SizeDouble];     // SizeDouble メソッドを実行
-        NSLog(@"sum_triangle (width*2 & height*2) = %lf",  [triangle_a SumTriangle]);
+        [triangle_a SizeChange:2:3];     // SizeChange メソッドを実行。仮引数の値を格納
+        NSLog(@"sum_triangle (width*2 & height*3) = %lf",  [triangle_a SumTriangle]);
         
     }
     return 0;
