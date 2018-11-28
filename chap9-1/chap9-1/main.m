@@ -53,7 +53,16 @@ int main(int argc, const char * argv[]) {
         [triangle_a SizeChange:2:3];     // SizeChange メソッドを実行。仮引数の値を格納
         NSLog(@"sum_triangle (width*2 & height*3) = %lf",  [triangle_a SumTriangle]);
         
-        NSLog(@"MumTriangleSide = %d", [Triangle NumTriangleSide]);
+        NSLog(@"NumTriangleSide = %d", [Triangle NumTriangleSide]);
+   
+        
+        // おまけ
+        id obj;         // id 型 (動的なオブジェクト), 使うタイミングで型が決まる
+        obj = [[Triangle alloc] init];      // Triangleクラスのインスタンスになった
+        // obj -> width = 5
+        // obj -> height = 3;
+        // 上記を実行しようとすると"参照している型には存在しないと怒られる。不明"
+        NSLog(@"id obj Test = %lf", [obj SumTriangle]);     // 中身がないので一応0になる
     }
     return 0;
 }
