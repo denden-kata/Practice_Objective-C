@@ -23,11 +23,17 @@
     height *= height_ratio;
     return;
 }
+
+// 三角形の辺の数を返す "クラスメソッド"
++ (int) NumTriangleSide {
+    return 3;
+}
+
+
 @end
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
         // インスタンスを生成。宣言時は "*" をつける
         // alloc : 実態を生成, init : 値の初期化
         Triangle *triangle_a = [[Triangle alloc] init];
@@ -47,6 +53,7 @@ int main(int argc, const char * argv[]) {
         [triangle_a SizeChange:2:3];     // SizeChange メソッドを実行。仮引数の値を格納
         NSLog(@"sum_triangle (width*2 & height*3) = %lf",  [triangle_a SumTriangle]);
         
+        NSLog(@"MumTriangleSide = %d", [Triangle NumTriangleSide]);
     }
     return 0;
 }
