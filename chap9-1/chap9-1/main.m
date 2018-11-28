@@ -1,5 +1,4 @@
 // クラスについて
-
 #import <Foundation/Foundation.h>
 
 // Triangle : クラス
@@ -11,7 +10,6 @@
     int height;
 }
 @end
-
 
 @implementation Triangle
 // Triangleクラスにおいて、メソッドを作成
