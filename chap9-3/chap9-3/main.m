@@ -6,25 +6,33 @@
     int width;
     int height;
 }
+// セッターを１行で書く。インスタンス変数と同じ名前
+@property int width, height;
 @end
 
+// Triangle クラスにおいてのメソッド
 @implementation Triangle
-// インスタンス変数に値をセットするメソッド
+
+/*
+// セッター：インスタンス変数に値をセットするメソッド
 -(void) SetTriangleDetails : (int)a : (int)b {
     width  = a;
     height = b;
     return;
 }
-
-// インスタンス変数の値を取得するメソッド
+// ゲッター：インスタンス変数の値を取得するメソッド
 -(int) GetWidth {
     return width;
 }
 -(int) GetHeight{
     return height;
 }
+*/
 
+// ゲッターを１行で書く
+@synthesize width, height;
 @end
+
 
 #import <Foundation/Foundation.h>
 
@@ -33,17 +41,22 @@ int main(int argc, const char * argv[]) {
         // Triangle_a というインスタンスを生成
         Triangle * Triangle_a = [[Triangle alloc] init];
         
-        // まだ空なのでこの場合は両方"0"
-        NSLog(@"Triangle_a width = %d, height = %d",
-              [Triangle_a GetWidth],[Triangle_a GetHeight]);
+        // セッターの処理
+        // set + "インスタンス変数" (インスタンス変数の先頭は大文字になる)
+        [Triangle_a setWidth:6];
+        [Triangle_a setHeight:4];
         
+        /*
         // メソッドを利用して値を格納した
         [Triangle_a SetTriangleDetails :6 :4];
 
         // メソッドで値を取得しなおした
         NSLog(@"Triangle_a width = %d, height = %d",
               [Triangle_a GetWidth],[Triangle_a GetHeight]);
+        */
         
+        // ゲッターメソッドによって値を取得したものを表示
+        NSLog(@" Triangle_a width = %d, height = %d", [Triangle_a width], [Triangle_a height]);
     }
     return 0;
 }
