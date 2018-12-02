@@ -44,7 +44,8 @@ int main(int argc, const char * argv[]) {
         // セッターの処理
         // set + "インスタンス変数" (インスタンス変数の先頭は大文字になる)
         [Triangle_a setWidth:6];
-        [Triangle_a setHeight:4];
+        // "インスタンス" + "インスタンス変数" = "値" 処理は上と同じ。省略型
+        Triangle_a.height = 4;
         
         /*
         // メソッドを利用して値を格納した
@@ -56,7 +57,7 @@ int main(int argc, const char * argv[]) {
         */
         
         // ゲッターメソッドによって値を取得したものを表示
-        NSLog(@" Triangle_a width = %d, height = %d", [Triangle_a width], [Triangle_a height]);
+        NSLog(@" Triangle_a width = %d, height = %d", [Triangle_a width], Triangle_a.height);
     }
     return 0;
 }
